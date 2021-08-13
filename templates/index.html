@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<title>Bank System</title>
+    
+
+
+<style>
+  .but{
+    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -15px;
+ 
+
+  }
+  .customer{
+    width: 100px;
+    text-align: center;
+    margin-right: 400px;
+         
+  }
+  .transer{
+    width: 100px;
+    text-align: center;
+    margin-right: 90px
+  }
+  .btn-dark {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .containerrrr{
+  
+    text-align: center;
+    height: 350px;
+    width: 100%;
+    background-color: rgb(123, 226, 209);
+    display: flex;
+    justify-content: space-between;
+  }
+  .img{
+    margin-top: 50px;
+    margin-right: 15px;
+  }
+  
+  h1{
+   margin-left: 150px;
+   margin-top: 130px;
+  font-weight: bold;
+font-size: 50px;
+  }
+  .btn-dark{
+    margin-left: 45px;
+  }
+  .container {
+    margin-top: 100px
+}
+
+.btn-raised {
+    transition: box-shadow .4s cubic-bezier(.25, .8, .25, 1), transform .4s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26)
+}
+
+.btn-raised:not([disabled]):active,
+.btn-raised:not([disabled]):focus,
+.btn-raised:not([disabled]):hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4);
+    transform: translate3d(0, -1px, 0)
+}
+
+.shadow {
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0, 0, 0)
+}
+
+.shadow:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1.5s
+}
+
+.shadow:active:before {
+    transform: scale(0, 0);
+    opacity: .1;
+    transition: 0s
+}
+
+.my-button,
+.my-2 {
+    margin-bottom: .5rem !important;
+    margin-left: 50px;
+    
+}
+
+.w-xs {
+    width: auto;
+}
+
+.bg-white {
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(247, 247, 247);
+}
+
+.bg-white .fill {
+    fill: #448bff
+}
+ 
+ 
+
+</style> 
+    
+   
+<div class="containerrrr ">
+     
+    <h1>Welcome To <br>The Spark Bank</h1>
+    <img src="{% static 'b.png'%}" alt="" class="img"  width="550" height="300">  
+  
+  
+  
+   
+</div>
+
+<div class="but">
+
+  <div class="customer">
+    <img src="{% static 'customer.jpg'%}" alt="" class="img"  width="200" height="200"> 
+    <a href="{% url 'BankApp:customer_data'%}"> <button type="button" class="btn btn-raised shadow my-button w-xs bg-white">Customer</button></a>
+  </div>
+ <div class="transer">
+  <img src="{% static 'money.png'%}" alt="" class="img"  width="200" height="200"> 
+  <a href="{% url 'BankApp:history' %}"><button type="button" class="btn btn-raised shadow my-button w-xs bg-white">Transfer History</button></a>
+ </div>
+ <!-- <div class="my-button container"> <button class="btn btn-raised shadow my-button w-xs bg-white">White</button>  </div> -->
+ 
+</div>
+<script src="https://use.fontawesome.com/4b8443a678.js"></script>
+ 
+ 
+
+{% endblock %}
